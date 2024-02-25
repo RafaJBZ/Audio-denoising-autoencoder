@@ -1,1 +1,1 @@
-# music_autoencoder
+audio-denosening-variational-autoencoder
