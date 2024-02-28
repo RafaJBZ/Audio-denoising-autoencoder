@@ -1,4 +1,4 @@
-# Sonic Saviors: Harnessing Autoencoders for Noise Denoising in Audio
+# Sonic Saviors: Autoencoders for Audio Noise Reduction
 
 ## Project Overview
 
