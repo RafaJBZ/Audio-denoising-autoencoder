@@ -3,7 +3,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
 
-'''
+# Directories containing the clean and noisy representations
 clean_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/clean_hybrid_representations'
 noisy_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/noisy_hybrid_representations'
 
@@ -34,12 +34,3 @@ print("Shape of noisy data:", x_train_noisy.shape)
 # Save the loaded data
 np.save('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/clean_hybrid_representations.npy', x_train)
 np.save('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/noisy_hybrid_representations.npy', x_train_noisy)
-'''
-
-# Load the saved data
-x_train = np.load('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/clean_hybrid_representations.npy')
-x_train_noisy = np.load('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/noisy_hybrid_representations.npy')
-
-# Print the shape of the loaded data
-print("Shape of loaded clean data:", x_train.shape)
-print("Shape of loaded noisy data:", x_train_noisy.shape)
