@@ -6,7 +6,7 @@ Welcome to Sonic Saviors, where we delve into the realm of noise reduction in au
 
 - **Feature-Level Denoising:** We extract intricate features like MFCC and Mel Spectrogram from pristine audio, introduce noise, and train an autoencoder to reconstruct these features, effectively cleansing the signal of unwanted noise.
 
-- **Audio-Level Denoising:** In this corrected approach, we directly manipulate the raw audio waveform by adding noise and subsequently extracting MFCC and Mel Spectrogram features. The autoencoder then works its magic to restore the clean audio waveform, employing these features.
+- **Audio-Level Denoising:** In this approach, we directly manipulate the raw audio waveform by adding noise and subsequently extracting MFCC and Mel Spectrogram features. The autoencoder then works its magic to restore the clean audio waveform, employing these features.
 
 ## Project Structure
 
