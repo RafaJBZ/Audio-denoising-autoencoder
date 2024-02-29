@@ -1,4 +1,4 @@
-# Sonic Saviors: Harnessing Autoencoders for Noise Denoising in Audio
+# Sonic Saviors: Autoencoders for Audio Noise Reduction
 
 ## Project Overview
 
@@ -6,21 +6,22 @@ Welcome to Sonic Saviors, where we delve into the realm of noise reduction in au
 
 - **Feature-Level Denoising:** We extract intricate features like MFCC and Mel Spectrogram from pristine audio, introduce noise, and train an autoencoder to reconstruct these features, effectively cleansing the signal of unwanted noise.
 
-- **Audio-Level Denoising:** In this corrected approach, we directly manipulate the raw audio waveform by adding noise and subsequently extracting MFCC and Mel Spectrogram features. The autoencoder then works its magic to restore the clean audio waveform, employing these features.
+- **Audio-Level Denoising:** In this approach, we directly manipulate the raw audio waveform by adding noise and subsequently extracting MFCC and Mel Spectrogram features. The autoencoder then works its magic to restore the clean audio waveform, employing these features.
 
 ## Project Structure
 
 - **README.md:** Your compass through this auditory adventure.
 - **data/:** Dive into this directory to uncover the audio data used for our experiments.
-- **noise_on_audio/:** This section houses the heart of our noise reduction efforts:
-  - **processed_data/:** Treasure trove of processed data generated during feature-level denoising.
-  - **autoencoder_model_audio.keras:** Behold, the trained autoencoder model, the cornerstone of audio-level denoising.
-- **noise_features/:** Here resides the arsenal of scripts dedicated to audio-level denoising:
-  - **create_hybrid_file.py:** Craft hybrid files melding clean and noisy audio waveforms.
-  - **denoisening_dae_features.ipynb:** Unravel the mysteries of audio-level denoising with this Jupyter Notebook.
-  - **processing_data.py:** (Optional) Script to fine-tune audio data for audio-level denoising (if needed).
-  - **flickr_audio_eda.ipynb:** (Optional) Embark on an auditory journey with this Jupyter Notebook containing exploratory data analysis (EDA) for audio data (if applicable).
-  - **prediction.ipynb:** Witness the prowess of our trained autoencoder models in action through this Jupyter Notebook.
+- **flickr_audio_eda.ipynb:** Embark on an auditory journey with this Jupyter Notebook containing exploratory data analysis (EDA) for audio data (if applicable).
+- **noise_audio/:** Here resides the arsenal of scripts dedicated to audio-level denoising.
+  - **create_hybrid_file.py:** Craft hybrid files melding clean and noisy audio representations.
+  - **denoisening_dae_audio.ipynb:** Unravel the mysteries of audio-level denoising with this Jupyter Notebook.
+  - **processing_data.py:** Script to preprocesse audio data for audio-level denoising (if needed).
+- **noise_features/:** This directory houses scripts related to feature-level denoising.
+  - **create_hybrid_file.py:** Generates hybrid files combining clean and noisy feature representations.
+  - **denoisening_dae_features.ipynb:** Explore feature-level denoising techniques with this Jupyter Notebook.
+  - **processing_data.py:** Script to preprocess audio data for feature-level denoising (if needed).
+- **prediction.ipynb:** Witness the prowess of our trained autoencoder models in action through this Jupyter Notebook.
 
 ## Autoencoder Architecture
 
