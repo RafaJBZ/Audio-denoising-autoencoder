@@ -38,7 +38,7 @@ class AudioProcessor:
         y = librosa.util.fix_length(y, size=self.fixed_length)
         mel = librosa.feature.melspectrogram(y=y, sr=self.sr, n_fft=self.n_fft, hop_length=self.hop_length,
                                              n_mels=self.n_mels)
-        mfcc = librosa.feature.mfcc(y=y, sr=self.sr, n_fft=self.n_fft, hop_length=self.hop_length, n_mfcc=self.n_mfcc)
+        mfcc = librosa.feature.mfcc(S=librosa.power_to_db(mel), n_mfcc=self.n_mfcc)
         mfcc = self.scal.fit_transform(mfcc)
         return mel, mfcc
 
@@ -97,9 +97,9 @@ class RepresentationSaver:
 def main():
     # Paths
     audio_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/flickr_audio/wavs'
-    train_clean_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/clean_hybrid_representations'
-    train_noisy_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/train/noisy_hybrid_representations'
-    test_audio_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/test'
+    train_clean_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_features/train/clean_hybrid_representations'
+    train_noisy_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_features/train/noisy_hybrid_representations'
+    test_audio_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_features/test'
 
     # Create directories if they don't exist
     os.makedirs(train_clean_representations_dir, exist_ok=True)
@@ -130,7 +130,7 @@ def main():
 
     # Save scaler
     joblib.dump(processor.scal,
-                '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/weights/scaler.save')
+                '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_features/weights/scaler.save')
     print('Scaler saved successfully!')
 
 
