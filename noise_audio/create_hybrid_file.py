@@ -4,8 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
 
 # Directories containing the clean and noisy representations
-clean_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/new_metodo/train/clean_hybrid_representations'
-noisy_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/new_metodo/train/noisy_hybrid_representations'
+clean_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_audio/train/clean_hybrid_representations'
+noisy_representations_dir = '/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/noisy_audio/train/noisy_hybrid_representations'
 
 desired_shape = (148, 109)
 
@@ -32,5 +32,5 @@ print("Shape of clean data:", x_train.shape)
 print("Shape of noisy data:", x_train_noisy.shape)
 
 # Save the loaded data
-np.save('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/new_metodo/train/clean_hybrid_representations.npy', x_train)
-np.save('/mnt/c/Users/rafaj/Documents/datasets/audio-denoising-auto-encoder/data/processed_data/new_metodo/train/noisy_hybrid_representations.npy', x_train_noisy)
+np.save('/mnt/c/Users/rafaj/Documents/Drive/ITESO/Eight Semester-Primavera 2024/Deep Learning/Audio-denoising-autoencoder/data/noise_on_audio/processed_data/train/clean_hybrid_representations.npy', x_train)
+np.save('/mnt/c/Users/rafaj/Documents/Drive/ITESO/Eight Semester-Primavera 2024/Deep Learning/Audio-denoising-autoencoder/data/noise_on_audio/processed_data/train/noisy_hybrid_representations.npy', x_train_noisy)
