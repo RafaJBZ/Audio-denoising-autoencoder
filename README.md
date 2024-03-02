@@ -49,7 +49,6 @@ def create_autoencoder(input_shape):
     x = Cropping2D(cropping=((0, 0), (0, 1)))(x)
     x = Conv2DTranspose(32, (3, 3), activation='relu', padding='same')(x)
     x = UpSampling2D((2, 2))(x)
-    # Correction: Pad 'SAME' to avoid information loss during upsampling
     x = Cropping2D(cropping=((0, 0), (1, 0)))(x)
     output_layer = Conv2DTranspose(1, (3, 3), activation='sigmoid', padding='same')(x)
 
