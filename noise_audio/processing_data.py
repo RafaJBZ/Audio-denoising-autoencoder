@@ -49,7 +49,7 @@ class AudioProcessor:
 
 
     @staticmethod
-    def add_noise(audio: np.ndarray, mean=0, std=0.05) -> np.ndarray:
+    def add_noise(audio: np.ndarray, mean=0, std=0.009) -> np.ndarray:
         """
         Add Gaussian noise to audio data.
 

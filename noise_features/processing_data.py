@@ -43,7 +43,7 @@ class AudioProcessor:
         return mel, mfcc
 
     @staticmethod
-    def add_noise(mel: np.ndarray, mfcc: np.ndarray, mean=0, std=0.05) -> Tuple[np.ndarray, np.ndarray]:
+    def add_noise(mel: np.ndarray, mfcc: np.ndarray, mean=0, std=0.009) -> Tuple[np.ndarray, np.ndarray]:
         """
         Add Gaussian noise to Mel spectrogram and MFCC features.
 
